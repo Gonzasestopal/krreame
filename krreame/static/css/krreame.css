@@ -1,29 +1,6 @@
 body {
-  /* Location of the image */
-  background-image: url(../images/123.jpg);
-  
-  /* Background image is centered vertically and horizontally at all times */
-  background-position: center center;
-  
-  /* Background image doesn't tile */
-  background-repeat: no-repeat;
-  
-  /* Background image is fixed in the viewport so that it doesn't move when 
-     the content's height is greater than the image's height */
-  background-attachment: fixed;
-  
-  /* This is what makes the background image rescale based
-     on the container's size */
-  background-size: cover;
-  
-  /* Set a background color that will be displayed
-     while the background image is loading */
-  background-color: #464646;
-
-  /* no scrolling baby */
   overflow:hidden;
 }
-
 
 .main-nav.overlay {
   position: absolute;
@@ -76,16 +53,36 @@ body {
   display: table-cell;
 }
 
+.site-wrapper {
+    position: relative;
+    z-index: 10;
+    min-height: 100%;
+    background: #fff;
+    -webkit-transition: -webkit-transform 0.5s ease;
+            transition: transform 0.5s ease;
+}
+
 .main-header {
-  width: 80%;
+    position: relative;
+    display: table;
+    width: 100%;
+    height: 100vh;
+    margin-bottom: 5rem;
+    text-align: center;
+    background: #222 no-repeat center center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.main-header .inner {
+    width: 80%;
 }
 
 .inner {
   position: relative;
   width: 80%;
   max-width: 710px;
-  margin: 0px auto;
-  text-align: center;
+  margin: 0 auto;
 }
 
 .page-title {
@@ -109,16 +106,15 @@ body {
     text-transform: uppercase;
 }
 
-.main-header {
-  position: relative;
-  display: table;
+.main-footer {
+  position: absolute;
+  bottom: 0;
+  right :0;
+  left: 0;
   width: 100%;
-  height: 100vh;
-  margin-bottom: 5rem;
-  text-align: center;
-  overflow: hidden;
-}
-
-.main-header .inner {
-    width: 80%;
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 40px;
+  z-index: 9999;
+  vertical-align: bottom;
+  display: table-cell;
 }
