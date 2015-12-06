@@ -1,0 +1,118 @@
+# Created by https://www.gitignore.io
+
+### Django ###
+*.log
+*.pot
+*.pyc
+__pycache__/
+settings.py
+
+
+### Python ###
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+build/
+develop-eggs/
+dist/
+colaboradora_app/core/migrations/
+colaboradora_app/categorias/migrations/
+colaboradora_app/estatusproyectos/migrations/
+colaboradora_app/localidad/migrations/
+colaboradora_app/misc/migrations/
+colaboradora_app/preregistro/migrations/
+colaboradora_app/proyectos/migrations/
+colaboradora_app/segmentacion/migrations/
+colaboradora_app/universidad/migrations/
+colaboradora_app/validados/migrations/
+colaboradora_app/perfiles/migrations/
+colaboradora_app/encuesta_ee/migrations/
+static_compressed/
+downloads/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+media/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+
+# Translations
+*.mo
+*.pot
+# Django stuff:
+*.log
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+
+### OSX ###
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+
+### Linux ###
+*~
+
+# KDE directory preferences
+.directory
+
+
+
+### Sqlite ###
+db.sqlite3
+
+
+### PyCharm
+.idea/

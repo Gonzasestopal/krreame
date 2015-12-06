@@ -1,0 +1,124 @@
+body {
+  /* Location of the image */
+  background-image: url(../images/123.jpg);
+  
+  /* Background image is centered vertically and horizontally at all times */
+  background-position: center center;
+  
+  /* Background image doesn't tile */
+  background-repeat: no-repeat;
+  
+  /* Background image is fixed in the viewport so that it doesn't move when 
+     the content's height is greater than the image's height */
+  background-attachment: fixed;
+  
+  /* This is what makes the background image rescale based
+     on the container's size */
+  background-size: cover;
+  
+  /* Set a background color that will be displayed
+     while the background image is loading */
+  background-color: #464646;
+
+  /* no scrolling baby */
+  overflow:hidden;
+}
+
+
+.main-nav.overlay {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 70px;
+  padding: 35px 40px;
+}
+
+.main-nav {
+    position: relative;
+    padding: 35px 40px;
+    margin: 0px 0px 30px;
+}
+
+.button {
+  color: #FFF;
+  border-color:white;
+  display: inline-block;
+  height: 38px;
+  padding: 0px 15px;
+  margin: 0 15px;
+  border-style: solid;
+  border-width: 1px;
+  opacity: 1;
+  text-align: center;
+  font-size: 12px;
+  text-transform: uppercase;
+  line-height: 35px;
+  white-space: nowrap;
+  border-radius: 3px;
+  transition: all 0.5s ease 0s;
+}
+
+.logo {
+  float:left;
+}
+
+.ingresa {
+  float:right;
+}
+
+.menu {
+  float:none;
+}
+
+.vertical {
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.main-header {
+  width: 80%;
+}
+
+.inner {
+  position: relative;
+  width: 80%;
+  max-width: 710px;
+  margin: 0px auto;
+  text-align: center;
+}
+
+.page-title {
+  margin: 10px 0px;
+  font-size: 5rem;
+  letter-spacing: -1px;
+  font-weight: 700;
+  font-family: "Open Sans",sans-serif;
+  color: #FFF;
+  line-height: 50px;
+}
+
+.page-description {
+    margin: 0px;
+    font-size: 2rem;
+    line-height: 1.5em;
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 0.01rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+}
+
+.main-header {
+  position: relative;
+  display: table;
+  width: 100%;
+  height: 100vh;
+  margin-bottom: 5rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.main-header .inner {
+    width: 80%;
+}
