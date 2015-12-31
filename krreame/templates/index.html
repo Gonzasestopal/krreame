@@ -12,43 +12,38 @@
   <a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}" class="button ingresa"><span>ingresa</span></a>
   {% endif %}
   </nav>
-  <div class="envuelve">
-  <div class="centrado">
-    <div class="titulaso">
-      <h1 class="page-title">Krreame</h1>
-      <h2 class="subheading">holaaaaaaaaa</h2>
-    </div>
-    <div class="formulario">
-      <div id="signup" class="signup">
-        <div id="signup_container" class="signup_container">
-          <div id="signup_forms_panel" class="signup_forms_panel">
-            <div id="signup_account">
-              <div class="form_row form_row_email">
-                <label for"signup_email">Correo electronico</label>
-                <input id="signup_email" type="email" placeholder="correo electronico"></input>
-              </div>
-              <div class="form_row form_row_password">
-                <label for="signup_password">Contraseña</label>
-                <input id="signup_password" type="password" placeholder="Contraseña"></input>
-              </div>
-              <div class="form_row form_row_username">
-                <label for="signup_username">Nombre de usuario</label>
-                <input id="signup_username" type="text" placeholder="Nombre de usuario"></input>
-              </div>
-            </div>
-          </div>
-        </div>
+  <div class="signup-center">
+
+      <h2 class="subheader">Convierte tus decisiones en triunfos para tu equipo.</h2>
+
+    <div class="signup-form">
+      <form name="signup" method="post" id="signup">
+      {% csrf_token %}
+      <div class=" floating-label-form-group2 row_email">
+        <label for"signup_email">Correo electronico</label> 
+        <input id="signup_email" type="email" placeholder="Correo electronico"></input>
+      </div>
+      <div class=" floating-label-form-group2 form_row_password">
+        <label for="signup_password">Contraseña</label>
+        <input id="signup_password" type="password" placeholder="Contraseña"></input>
+      </div>
+      <div class=" floating-label-form-group2 form_row_username">
+        <label for="signup_username">Nombre de usuario</label>
+        <input id="signup_username" type="text" placeholder="Nombre de usuario"></input>
       </div>
     </div>
+      <button type="submit" id="signup_forms_submit" class="chrome big signup_forms_submit touchy blue">
+        <span class="signup_account_btn">Registrate</span>
+      </button>
   </div>
   <footer class="main-footer">
-    <a class="button menu"><span>
+    <div class="menu"><span>
     {% if user and not user.is_anonymous %}
-    Bienvenido {{user.get_full_name}}
+    Bienvenido, {{user.get_full_name}} :)
     {% else %}
-    Bienvenido invocador!
+    Bienvenido, invocador :)
     {% endif %}
-    </span></a>
+    </div></a>
   </footer>
   </header>
 
