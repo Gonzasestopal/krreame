@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+<nav class="main-nav">
+  <a href='/' class="button logo"><span>krreame</span></a>
+  {% if user and not user.is_anonymous %}
+  <a href="{% url 'user-logout' %}?next={{ request.path }}" class="button ingresa"><span>desconectar</span></a>
+  {% else %}
+  <a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}" class="button ingresa"><span>ingresa</span></a>
+  {% endif %}
+</nav>
+<div id="repeatableBG" style="height: 1153px; width: 1842px;"></div>
+<div class="center">
+	<div id="pageInvestor" class="pageOld">
+		<div class="contentTitle">
+		<strong>ACTITUDES </strong>  Y COMPORTAMIENTOS
+		</div>
+		<div class="subPage">
+			<div id="ii_betterWorld" class="pageContent">
+				<img src="/static/images/darien.jpg" alt="" style="max-width:100%;max-height:100%;">
+				<div class="iiModule moduleLight module16">
+					<div class="moduleIntro clearfix">
+						<div class="modColA">
+						<p> Es normal que en los juegos online haya una gran diversidad de jugadores con comportamientos diferentes, algunos de ellos tendrán un buen comportamiento y otros recurrirán a la violencia verbal, lo cual es un aspecto que a Riot Games le parece preocupante. Por ello, cree que quienes tengan un buen comportamiento merecen una recompensa así como los que tengan un comportamiento reprobable deben ser castigados. </p>
+						</div>
+						<div class="modcolB">
+						<p> De esta forma, Riot Games está recompensando a los jugadores que hayan tenido un comportamiento optimo durante el 2014, y lo está haciendo por medio del clasico misterioso regalo. Usuarios que no hayan recibido alguna restricción en el chat, restricción de rango, baneo de 14 días o baneo permanente podrán acceder a esta recompensa. Adicional, necesitan al menos ser nivel 5. </p>
+						</div>
+						<div class="modColC">
+						<blockquote>
+						<p> “Algunos jugadores se ha preguntado porque estamos recompensando el comportamiento positivo cuando han escuchado que estamos en contra de ello en el pasado. ¡Lo están mal entendiendo! Siempre hemos dicho que entre nuestras políticas de comportamiento se incluye el castigo, reforma y refuerzo positivo.  No hay forma de mejorar la conducta de un jugador, pero siempre se puede implementar una mezcla de castigos y recompensas.</p>
+						</blockquote>
+						</div>
+					</div>
+				</div>
+				<div class="iiModule moduleDarker">
+					<div class="modTitle">A TENER EN CUENTA</div>
+					<div class="modSubtitle"><strong>ACCIONES</strong> POSITIVAS</div>
+					<ul class="factList">
+						<li class="fact">
+							<div class="factTitle">NO INSULTAR</div>
+							<div class="factAnswer">PROMUEVE COMPAÑERISMO</div>
+						</li>
+						<li class="fact">
+							<div class="factTitle">FELICITAR JUGADAS</div>
+							<div class="factAnswer">IMPULSA EL EQUIPO</div>
+						</li>
+						<li class="fact">
+							<div class="factTitle">AVISAR SI FALTAN CAMPEONES ENEMIGOS</div>
+							<div class="factAnswer">EVITA MUERTES INNECESARIAS</div>
+						</li>
+						<li class="fact">
+							<div class="factTitle">SER HUMILDE EN LA VICTORIA Y ORGULLOSO EN LA VICTORIA</div>
+							<div class="factAnswer">QUIEN SABE SI LOS VOLVERAS A VER!</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+<nav class="main-nav">
+  <a href='/' class="button logo"><span>krreame</span></a>
+  {% if user and not user.is_anonymous %}
+  <a href="{% url 'user-logout' %}?next={{ request.path }}" class="button ingresa"><span>desconectar</span></a>
+  {% else %}
+  <a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}" class="button ingresa"><span>ingresa</span></a>
+  {% endif %}
+</nav>
+<div id="repeatableBG" style="height: 1153px; width: 1842px;"></div>
+<div class="center">
+	<div id="pageInvestor" class="pageOld">
+		<div class="contentTitle">
+		<strong>CONOCENOS</strong>  Y ENVIANOS TUS SUGERENCIAS
+		</div>
+		<div class="subPage">
+			<div id="ii_betterWorld" class="pageContent">
+				<img src="/static/images/contact2.jpg" alt="" style="max-width:100%;max-height:100%;">
+				<div class="iiModule moduleLight module16">
+					<div class="moduleIntro clearfix">
+						<div class="modColA">
+						<p> Bienvenidos a krreame, una plataforma dedicada a elevar el nivel latino en league of legends. Nuestro principal
+						objetivo es brindar contenido de calidad y relevante para mejorar tus habilidades como jugador y persona orientado a la meta actual.
+						 </p>
+						</div>
+						<div class="modcolB">
+						<p> Somos un grupo de jugadores apasionados que como tu, buscamos descubrir nuevos enfoques y tecnicas para conseguir la victoria en la grieta del invocador. Estamos comprometidos a elevar y fortalecer el nivel competitivo de la escena latinoamericana.</p>
+						</div>
+						<div class="modColC">
+						<blockquote>
+						<p> “Creemos que nadie nace sabiendo jugar, sino que es una disciplina que se cultiva con pasion y esfuerzo.”</p>
+						</blockquote>
+						</div>
+					</div>
+				</div>
+				<div class="iiModule moduleDarker module16">
+					<p>Ponte en contacto con nosotros! Nos encantaria escuchar tus sugerencias.</p>
+
+                <form name="theform" action="." method="post" id="theform">
+                	{% csrf_token %}
+                	<div class="form-group floating-label-form-group">
+						<label for="id_from_email">mail</label>
+    					<input id="id_subject" type="email" name="from_email" maxlength="25" placeholder="Escribe tu email" />
+    				</div>
+    				<div class="form-group floating-label-form-group">
+    					<label for="id_message">mensaje</label>
+   						<textarea rows="5" name="message" id="id_message" placeholder="Escribe tu mensaje"></textarea>
+   					</div>	
+                	<button class="boton-enviar" type="submit">Enviar</button>
+                </form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

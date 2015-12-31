@@ -2,63 +2,336 @@
 {% load staticfiles %}
 {% block content %}
 
-<div class="site-wrapper" style="background-color: #36465D">
+<div class="site-wrapper bg" style="background-color: #36465D">
   <header class="main-header" style="background-image: url(static/images/123.jpg)">
   <nav class="main-nav overlay2">
-  <a class="button logo"><span>krreame</span></a>
-  <a class="button menu"><span>aprende desde cero</span></a>
-  <a class="button ingresa"><span>ingresa</span></a>
+  <a href='/' class="button logo"><span>krreame</span></a>
+  {% if user and not user.is_anonymous %}
+  <a href="{% url 'user-logout' %}?next={{ request.path }}" class="button ingresa"><span>desconectar</span></a>
+  {% else %}
+  <a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}" class="button ingresa"><span>ingresa</span></a>
+  {% endif %}
   </nav>
-  <div class="vertical">
-    <div class="main-header-content inner">
-      <h1 class="page-title"></h1>
-      <h2 class="page-description"></h2>
+  <div class="envuelve">
+  <div class="centrado">
+    <div class="titulaso">
+      <h1 class="page-title">Krreame</h1>
+      <h2 class="subheading">holaaaaaaaaa</h2>
+    </div>
+    <div class="formulario">
+      <div id="signup" class="signup">
+        <div id="signup_container" class="signup_container">
+          <div id="signup_forms_panel" class="signup_forms_panel">
+            <div id="signup_account">
+              <div class="form_row form_row_email">
+                <label for"signup_email">Correo electronico</label>
+                <input id="signup_email" type="email" placeholder="correo electronico"></input>
+              </div>
+              <div class="form_row form_row_password">
+                <label for="signup_password">Contraseña</label>
+                <input id="signup_password" type="password" placeholder="Contraseña"></input>
+              </div>
+              <div class="form_row form_row_username">
+                <label for="signup_username">Nombre de usuario</label>
+                <input id="signup_username" type="text" placeholder="Nombre de usuario"></input>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <footer class="main-footer">
-    <a class="button menu"><span>Descubre mas</span></a>
+    <a class="button menu"><span>
+    {% if user and not user.is_anonymous %}
+    Bienvenido {{user.get_full_name}}
+    {% else %}
+    Bienvenido invocador!
+    {% endif %}
+    </span></a>
   </footer>
   </header>
+
+
+<div class="modal fade" id="myModal" style="z-index:10000" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 id="myModalLabel"></h4>
+            </div>
+            <div class="modal-body">
+              <span>COMENTARIOS</span>
+              <span class="conditions">Usa una cuenta de facebook para añadir un comentario. Al usar este servicio de comentarios estas de acuerdo a los terminos y condiciones de su servicio.</span>
+              <div id="container">
+              <div class="fb-comments" id='1'><fb:comments href="http://127.0.0.1:8001/article/1" data-width="550" data-numposts="5"> </fb:comments></div>
+              <div class="fb-comments" id='2'><fb:comments href="http://127.0.0.1:8001/article/2" data-width="550" data-numposts="5"> </fb:comments></div>
+              <div class="fb-comments" id='3'><fb:comments href="http://127.0.0.1:8001/article/3" data-width="550" data-numposts="5"> </fb:comments></div>
+              <div class="fb-comments" id='4'><fb:comments href="http://127.0.0.1:8001/article/4" data-width="550" data-numposts="5"> </fb:comments></div>
+              <div class="fb-comments" id='5'><fb:comments href="http://127.0.0.1:8001/article/5" data-width="550" data-numposts="5"> </fb:comments></div>
+              <div class="fb-comments" id='6'><fb:comments href="http://127.0.0.1:8001/article/6" data-width="550" data-numposts="5"> </fb:comments></div>
+              <div class="fb-comments" id='7'><fb:comments href="http://127.0.0.1:8001/article/7" data-width="550" data-numposts="5"> </fb:comments></div>
+              <div class="fb-comments" id='8'><fb:comments href="http://127.0.0.1:8001/article/8" data-width="550" data-numposts="5"> </fb:comments></div>
+              <div class="fb-comments" id='9'><fb:comments href="http://127.0.0.1:8001/article/9" data-width="550" data-numposts="5"> </fb:comments></div>
+              <div class="fb-comments" id='10'><fb:comments href="http://127.0.0.1:8001/article/10" data-width="550" data-numposts="5"></fb:comments></div>
+              </div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+<script type="text/javascript">
+    function ShowModal(header, url) {
+        var newboxes = document.getElementsByClassName("fb-comments");
+        for (i=0;i< newboxes.length; i++) {
+          name = newboxes[i].getAttribute('class');
+          if (newboxes[i].id == url) {
+            newboxes[i].style.display = 'block';
+          }
+          else {
+            newboxes[i].style.display = 'none';
+          }      
+        }
+        $('#myModalLabel').html(header);
+        $('#myModal').modal('show');
+    }
+</script>
 
   <div id="content" class="container clearfix">
     
     <div class="item">
-      <p>titulo</p>
+      <p><strong>Ansiedad de elo</strong></p>
+      <a href="#" target="_blank">
       <img src="static/images/challenger.jpg" alt="" />
-      <p>descripcion</p>
-      <a href="#"> #tags #ytags</a>
+      </a>
+      <div class="post-description">
+        <p>A muchos nos pasa, queremos llegar a ese rank para obtener ese marco que tanto queremos pero...</p>
+      </div>
+      <div class="post-tags">
+        <a href="#"> #elo</a>
+        <a href="#">#rendimiento</a>
+      </div>
+      <div class="post-footer">
+        <div class="post-notes">
+          <span id='1a' onclick="ShowModal('Ansiedad de elo','1')"><strong>Leer comentarios</strong></span>
+        </div>
+        <div class="post-controls">
+         <span class="glyphicon glyphicon-heart"></span>
+        </div>
+      </div>
     </div>
     
     <div class="item">
+      <p><strong>Actitudes y comportamientos</strong></p>
+      <a href="article" target="_blank">
       <img src="static/images/darien.jpg" alt="" />
+      </a>
+      <div class="post-description">
+        <p>La mejor manera de crear un ambiente favorable en la seleccion de campeones es...</p>
+      </div>
+      <div class="post-tags">
+        <a href="#"> #championselect</a>
+        <a href='#'> #rendimiento</a>
+      </div>
+      <div class="post-footer">
+        <div class="post-notes">
+          <span id='2a' onclick=" ShowModal('Actitudes y comportamientos','2')"><strong>Leer comentarios</strong></span>
+        </div>
+        <div class="post-controls">
+          <span class="glyphicon glyphicon-heart"></span>
+        </div>
+      </div>
     </div>
     
     <div class="item">
-      <p>titulo</p>
+      <p><strong>Carreando desde el carril superior</strong></p>
+      <a href="#" target="_blank">
       <img src="static/images/riven.jpg" alt="" />
-      <p>descripcion</p>
-      <a href="#"> #tags #ytags</a>
+      </a>
+      <div class="post-description">
+        <p>Las ventajas de escoger un campeon de daño como riven permite a los jugadores a hacer jugadas...</p>
+      </div>
+      <div class="post-tags">
+        <a href="#"> #championselect</a>
+        <a href='#'> #top</a>
+        <a href='#'> #riven</a>
+      </div>
+      <div class="post-footer">
+        <div class="post-notes">
+          <span id='3a' onclick="ShowModal('Carreando desde el carril superior','3')"><strong>Leer comentarios</strong></span>
+        </div>
+        <div class="post-controls">
+          <span class="glyphicon glyphicon-heart"></span>
+        </div>
+      </div>
     </div>
-    
+
     <div class="item">
+      <p><strong>Aprende de los mejores</strong></p>
+      <a href="http://plays.tv/video/56623ee56641e544bc/1-2-crit?from=search&game_id=b179585c6b68a2791eea4a1ad3d7ef72" target="_blank">
       <img src="https://45.media.tumblr.com/a57a759addec65b79f206a5354e4c86b/tumblr_nywl2gmQb01tefozco1_400.gif" alt="" />
+      </a>
+      <div class="post-description">
+        <p>Aprende de los mejores, dedica un poco de tiempo a conocer las ventajas y desventajas de tus campeones y pronto te convertiras en uno!</p>
+      </div>
+      <div class="post-tags">
+        <a href="#"> #koreanthings</a>
+        <a href='#'> #plays</a>
+      </div>
+      <div class="post-footer">
+        <div class="post-notes">
+          <span id='4a' onclick="ShowModal('Aprende de los mejores','4')"><strong>Leer comentarios</strong></span>
+        </div>
+        <div class="post-controls">
+          <span class="glyphicon glyphicon-heart"></span>
+        </div>
+      </div>
     </div>
     
     <div class="item">
+      <p><strong>Suporteando tu equipo a la victoria!</strong></p>
+      <a href="#" target="_blank">
       <img src="static/images/ilao.jpg" alt="" />
+      </a>
+      <div class="post-description">
+        <p>Lo sabemos, suportear no es facil, y menos cuando te encuentras con un equipo que no apoya tus decisiones...</p>
+      </div>
+      <div class="post-tags">
+        <a href="#"> #support</a>
+        <a href='#'> #decisiones</a>
+      </div>
+      <div class="post-footer">
+        <div class="post-notes">
+          <span id='5a' onclick="ShowModal('Suporteando tu equipo a la victoria!','5')"><strong>Leer comentarios</strong></span>
+        </div>
+        <div class="post-controls">
+          <span class="glyphicon glyphicon-heart"></span>
+        </div>
+      </div>
     </div>
     
+    
     <div class="item">
+      <p><strong>El rework de poppy!</strong></p>
+      <a href="http://las.leagueoflegends.com/es/champion-update/poppy-guardiana-del-martillo" target="_blank">
       <img src="static/images/poppy.jpg" alt="" />
+      </a>
+      <div class="post-description">
+        <p>Les traemos un video que resume los nuevos cambios y por supuesto, las ventajas para subir de elo...</p>
+      </div>
+      <div class="post-tags">
+        <a href="#"> #rework</a>
+        <a href='#'> #poppy</a>
+        <a href='#'> #top</a>
+      </div>
+      <div class="post-footer">
+        <div class="post-notes">
+          <span id='6a' onclick="ShowModal('El rework de poppy!','6')"><strong>Leer comentarios</strong></span>
+        </div>
+        <div class="post-controls">
+          <span class=" glyphicon glyphicon-heart"></span>
+        </div>
+      </div>
     </div>
     
+    
     <div class="item">
+      <p><strong>Cuando dar o no dar el blue</strong></p>
+      <a href="#" target="_blank">
       <img src="static/images/blue.jpg" alt="" />
+      </a>
+      <div class="post-description">
+        <p>Uno de los buffos mas disputados del juego, puede crear diferencias entre el mid y el jungla..</p>
+      </div>
+      <div class="post-tags">
+        <a href="#"> #jungla</a>
+        <a href='#'> #mid</a>
+      </div>
+      <div class="post-footer">
+        <div class="post-notes">
+          <span id='7a' onclick="ShowModal('Cuando dar o no dar el blue!','7')"><strong>Leer comentarios</strong></span>
+        </div>
+        <div class="post-controls">
+          <span class="glyphicon glyphicon-heart"></span>
+        </div>
+      </div>
     </div>
     
+    
     <div class="item">
-      <img src="static/images/chal.jpg" alt="" />
+      <p><strong>Destrozando diamond con kindred ...</strong></p>
+      <a href="https://www.youtube.com/watch?v=SqIlH0cr9pw" target="_blank">
+      <img src="static/images/kindred.jpg" alt="" />
+      </a>
+      <div class="post-description">
+        <p>Replay de un jugador diamante 5 donde obtiene el control del juego despues de obtener un doble kill en top, prediciendo ..</p>
+      </div>
+      <div class="post-tags">
+        <a href="#"> #jungle</a>
+        <a href='#'> #countergank</a>
+      </div>
+      <div class="post-footer">
+        <div class="post-notes">
+          <span id='8a' onclick="ShowModal('Destrozando diamond con kindred jungla','8')"><strong>Leer comentarios</strong></span>
+        </div>
+        <div class="post-controls">
+          <span class="glyphicon glyphicon-heart"></span>
+        </div>
+      </div>
     </div>
+    
+
+    <div class="item">
+      <p><strong>Juega mas y habla menos</strong></p>
+      <a href="#" target="_blank">
+      <img src="static/images/about2.jpg" alt="" />
+      </a>
+      <div class="post-description">
+        <p>Lo digo siempre, esa es la diferencia entre un jugador de lol nuevo y veterano...</p>
+      </div>
+      <div class="post-tags">
+        <a href="#"> #elotips</a>
+        <a href='#'> #rendimiento</a>
+      </div>
+      <div class="post-footer">
+        <div class="post-notes">
+          <span id='9a' onclick="ShowModal('Juega mas y habla menos','9')"><strong>Leer comentarios</strong></span>
+        </div>
+        <div class="post-controls">
+          <span class="glyphicon glyphicon-heart"></span>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="item">
+      <p><strong>Conocenos y envianos...!</strong></p>
+      <a href="colabora" target="_blank">
+      <img src="static/images/contact2.jpg" alt="" />
+      </a>
+      <div class="post-description">
+        <p>Nos encantaria escuchar tus historias y experiencias, envianos tus datos!</p>
+      </div>
+      <div class="post-tags">
+        <a href="#"> #comunidad</a>
+        <a href="#"> #krreame</a>
+        <a href='#'> #trabajarnodaelo</a>
+      </div>
+      <div class="post-footer">
+        <div class="post-notes">
+          <span id='10a' onclick="ShowModal('Conocenos y envianos tus sugerencias!','10')"><strong>Leer comentarios</strong></span>
+        </div>
+        <div class="post-controls">
+          <span class="glyphicon glyphicon-heart"></span>
+        </div>
+      </div>
+    </div>
+    
     
   </div>
 

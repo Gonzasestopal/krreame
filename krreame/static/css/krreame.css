@@ -32,6 +32,7 @@ body {
     position: relative;
     padding: 35px 40px;
     margin: 0px 0px 30px;
+    z-index: 300;
 }
 
 .button {
@@ -68,6 +69,12 @@ body {
 .vertical {
   vertical-align: middle;
   display: table-cell;
+  width: 100%;
+  height: 100%;
+}
+
+.clearfix {
+  display: block;
 }
 
 .site-wrapper {
@@ -158,6 +165,11 @@ body {
   border-radius: 3px;
 }
 
+.item p{
+  font-size:14px;
+  font-family:Helvetica
+}
+
 .featured {
   width: 620px;
 }
@@ -216,9 +228,284 @@ header:after {
 }
 
 div .item p {
-  padding: 10px 0 0 10px;
+  padding: 10px 8px 0 8px;
+}
+.center {
+  width: 1040px;
+  position: relative;
+  z-index: 100;
+  padding: 103px 0px;
+  margin: 0px auto;
 }
 
-div .item a {
-  padding: 0 0 0 10px;
+.pageOld {
+  position: relative;
+  width: 879px;
+  margin: 0px auto;
+  background-color: #FFF;
+}
+
+#pageInvestor .subPage {
+    background: transparent none repeat scroll 0% 0%;
+}
+.subPage {
+    z-index: 300;
+    position: relative;
+    margin-top: 56px;
+    margin: 0px auto;
+    background: #E4E6E6 none repeat scroll 0% 0%;
+    position: relative;
+}
+
+.pageContent {
+    position: relative;
+}
+
+.module16 {
+    font: 300 16px/22px "proxima-nova",sans-serif;
+}
+.moduleLight {
+    color: #2E2E2E;
+    background: transparent url("/static/images/lighter.gif") repeat scroll 0% 0%;
+}
+.iiModule {
+    padding: 40px;
+}
+
+.moduleIntro {
+    padding-bottom: 30px;
+    border-bottom: 1px solid #C0C4C6;
+}
+
+.moduleIntro .modColA {
+    width: 380px;
+    margin-right: 30px;
+    float: left;
+}
+
+.moduleIntro .modColB {
+    width: 389px;
+    float: left;
+}
+
+.moduleIntro .modColC {
+  margin-top: 20px;
+  width: 100%;
+  float: left;
+}
+
+.iiModule .modTitle {
+    margin-bottom: 7px;
+    font: 400 10px/10px "proxima-nova",sans-serif;
+    letter-spacing: 1px;
+}
+
+.modSubtitle {
+    border-bottom: 2px solid #EDF0F0;
+    margin-bottom: 20px;
+    padding-bottom: 30px;
+    font: 400 16px/16px "proxima-nova",sans-serif;
+    letter-spacing: 2px;
+}
+
+.moduleDarker {
+    padding: 40px 40px 80px;
+    color: #EDF0F0;
+    background: transparent url("/static/images/darker.gif") repeat scroll 0% 0%;
+}
+
+ul.factList {
+    margin: 0px;
+    padding: 0px;
+    border-top: 1px solid #656B6F;
+}
+
+ul.factList li.fact {
+    height: 30px;
+    margin: 0px;
+    padding: 10px 0px;
+    list-style-type: none;
+    border-bottom: 1px solid #656B6F;
+    font: 400 10px/10px "proxima-nova",sans-serif;
+    letter-spacing: 1px;
+}
+
+ul.factList li.fact .factTitle {
+    float: left;
+    color: #B9D8E6;
+}
+
+ul.factList li.fact .factAnswer {
+    float: right;
+    color: #EDF0F0;
+}
+
+#repeatableBG {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+    background: #ABABAB url("/static/images/123.png") repeat scroll center 2px;
+}
+
+.bg {
+   background: url("/static/images/123.png") repeat scroll center 2px; 
+}
+
+.contentTitle {
+    font: 400 19px/19px "Open sans",sans-serif;
+    letter-spacing: 1px;
+    color: #282A2A;
+    position: absolute;
+    top: -56px;
+    left: 0px;
+}
+
+b, strong {
+    font-weight: bold;
+}
+
+.item a {
+  font-family:"Helvetica", sans-serif;
+  color: #A1A1A1;
+
+  margin-right:10px;
+}
+
+.post-tags {
+    font-size:13px;
+    margin-left:10px;
+    line-height:1
+}
+
+.post-footer {
+  height:45px;
+  width: 100%;
+  padding:10px 10px;
+}
+
+.post-notes {
+    padding: 0;
+    float: left;
+    margin-right: 2px;
+    position: relative;
+    font-size: 13px;
+}
+
+.post-controls {
+  float:right;
+}
+
+.conditions {
+  color: #666;
+  font-size: 12px;
+  line-height: 14px;
+  margin-bottom: 22px;
+  padding-right: 12px;
+  display:inline-block;
+}
+
+.floating-label-form-group {
+  font-size: 14px;
+  position: relative;
+  margin-bottom: 0px;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #EEE;
+}
+
+.floating-label-form-group label {
+    transition: top 0.3s ease 0s, opacity 0.3s ease 0s;
+    opacity: 0;
+    display: block;
+    z-index: 0;
+    position: relative;
+    top: 2em;
+    margin: 0px;
+    font-size: 0.85em;
+    line-height: 1.76471em;
+    vertical-align: baseline;
+}
+
+.floating-label-form-group input, .floating-label-form-group textarea {
+    z-index: 1;
+    position: relative;
+    padding-right: 0px;
+    padding-left: 0px;
+    border-radius: 0px;
+    font-size: 1.5em;
+    background: transparent none repeat scroll 0px 0px;
+    box-shadow: none !important;
+    resize: none;
+    border: medium none;
+}
+
+.floating-label-form-group textarea{
+  width:100%;
+}
+
+form:first-child .floating-label-form-group {
+    border-top: 1px solid #EEE;
+}
+
+.boton-enviar {
+    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    border-radius: 0px;
+    padding: 15px 25px;
+    color: #333;
+    background-color: #FFF;
+    border-color: #CCC;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -moz-user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.centrado {
+  display: block;
+  position: absolute;
+  top: 50%;
+margin-left: -400px;
+  width: 800px;
+  box-sizing: border-box;
+  left: 50%;
+}
+
+.envuelve {
+    height: 100%;
+    left: 0px;
+    overflow: hidden;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    z-index: 10;
+    animation: 0.7s ease-out 0.5s normal backwards 1 running aboutTumblrIntro;
+    font-size: 16px;
+}
+
+.subheading {
+    width: 517px;
+    position: relative;
+    left: 50%;
+    margin: 10px 0px 16px -258px;
+    font-size: 16px;
+    line-height: 22px;
+    white-space: nowrap;
+    color: #FFF;
+    text-align: center;
 }

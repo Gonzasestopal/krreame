@@ -7,5 +7,9 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'$', 'core.views.home', name='home'),
+    url('', include('social.apps.django_app.urls', namespace='social')),
+    url(r'^users/logout/$', 'django.contrib.auth.views.logout', {'next_page': '/'}, name="user-logout"),
+    url(r'^$', 'core.views.home',),
+    url(r'^article/$', 'core.views.article'),
+    url(r'^colabora/$', 'core.views.colabora'),
 ]
