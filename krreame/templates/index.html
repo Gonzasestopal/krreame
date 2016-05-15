@@ -12,10 +12,8 @@
   <a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}" class="button ingresa"><span>ingresa</span></a>
   {% endif %}
   </nav>
-  <div class="signup-center">
-
-      <h2 class="subheader">Convierte tus decisiones en triunfos para tu equipo.</h2>
-
+  <h4 class="subheader">Convierte tus decisiones en triunfos para tu equipo</h3>
+  <!--<div class="signup-center">
     <div class="signup-form">
       <form name="signup" method="post" id="signup">
       {% csrf_token %}
@@ -35,7 +33,7 @@
       <button type="submit" id="signup_forms_submit" class="chrome big signup_forms_submit touchy blue">
         <span class="signup_account_btn">Registrate</span>
       </button>
-  </div>
+  </div>-->
   <footer class="main-footer">
     <div class="menu"><span>
     {% if user and not user.is_anonymous %}

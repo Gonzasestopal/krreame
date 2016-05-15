@@ -20,11 +20,6 @@ body {
 }
 
 .main-nav.overlay2 {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  height: 70px;
   padding: 35px 40px;
 }
 
@@ -500,15 +495,11 @@ form:first-child .floating-label-form-group {
 }
 
 .subheader {
-  width: 517px;
-  position: relative;
-  left: 50%;
-  margin: 10px 0px 16px -258px;
-  font-size: 16px;
-  line-height: 22px;
-  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  font-weight: normal;
   color: #FFF;
-  text-align: center;
+
 }
 
 .floating-label-form-group2 {
