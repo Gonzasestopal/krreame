@@ -9,7 +9,7 @@ from django.conf import settings
 from django.contrib.sites.models import RequestSite
 
 def home(request):
-   site_name = RequestSite(request).domain
+   site_name = request.get_host()
    context = RequestContext(request,
                            {'user': request.user, 'site_name': site_name})
    return render_to_response('index.html',
