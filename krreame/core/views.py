@@ -10,7 +10,7 @@ from django.conf import settings
 
 def home(request):
    context = RequestContext(request,
-                           {'user': request.user, 'site_url': settings.SITE_URL})
+                           {'user': request.user, 'site_url': request.get_host()})
    return render_to_response('index.html',
                              context_instance=context)
 
