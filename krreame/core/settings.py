@@ -26,8 +26,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-SITE_URL = 'http://ec2-52-33-6-138.us-west-2.compute.amazonaws.com/'
-
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 EMAIL_USE_TLS = True
@@ -65,7 +63,6 @@ MIDDLEWARE_CLASSES = [
 ROOT_URLCONF = 'core.urls'
 
 TEMPLATES_CONTEXT_PROCESSORS = (
-     "module.context_processors.site",
      'django.template.context_processors.debug',
      'django.template.context_processors.request',
      'django.contrib.auth.context_processors.auth',

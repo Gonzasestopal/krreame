@@ -6,11 +6,12 @@ from django.template.context import RequestContext
 from django.core.mail import send_mail, BadHeaderError
 from core.forms import ContactForm
 from django.conf import settings
-
+from django.contrib.sites.models import RequestSite
 
 def home(request):
+   site_name = RequestSite(request).domain
    context = RequestContext(request,
-                           {'user': request.user, 'site_url': settings.SITE_URL})
+                           {'user': request.user, 'site_name': site_name})
    return render_to_response('index.html',
                              context_instance=context)
 
