@@ -19,7 +19,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = 'pc-=&2)kdsk9444$+8n^dyd9#8-oe1&y(qr_)l-s6ux+cargax'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -75,7 +75,7 @@ TEMPLATES_CONTEXT_PROCESSORS = (
 WSGI_APPLICATION = 'core.wsgi.application'
 
 SOCIAL_AUTH_FACEBOOK_KEY = '762220690572262'
-SOCIAL_AUTH_FACEBOOK_SECRET = os.environ.get('SOCIAL_AUTH_FACEBOOK_SECRET')
+SOCIAL_AUTH_FACEBOOK_SECRET = 'dab0e412b9fc13858bd1a31c06d78dea'
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = "/"
 
 AUTHENTICATION_BACKENDS = (
