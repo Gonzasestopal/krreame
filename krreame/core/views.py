@@ -6,7 +6,6 @@ from django.template.context import RequestContext
 from django.core.mail import send_mail, BadHeaderError
 from core.forms import ContactForm
 from django.conf import settings
-from django.contrib.sites.models import RequestSite
 
 def home(request):
    site_name = request.get_host()
