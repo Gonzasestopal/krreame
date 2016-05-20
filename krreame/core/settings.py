@@ -24,7 +24,7 @@ SECRET_KEY = 'pc-=&2)kdsk9444$+8n^dyd9#8-oe1&y(qr_)l-s6ux+cargax'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.gonzasestopal.com']
+ALLOWED_HOSTS = []
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
