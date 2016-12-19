@@ -1,13 +1,19 @@
-{% extends 'base.html' %}
-{% load staticfiles %}
-{% block content %}
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<meta charset='utf-8'>
+		<title>krreame</title>
+	    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	    <link href="css/krreame.css" rel="stylesheet">
+	    <link href="css/bootstrap.css" rel="stylesheet">
+	    <link href="css/flat-ui-pro.css" rel="stylesheet">
+	</head>
+	<body>
+
 <nav class="main-nav">
-  <a href='/' class="button logo"><span>krreame</span></a>
-  {% if user and not user.is_anonymous %}
-  <a href="{% url 'user-logout' %}?next={{ request.path }}" class="button ingresa"><span>desconectar</span></a>
-  {% else %}
-  <a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}" class="button ingresa"><span>ingresa</span></a>
-  {% endif %}
+  <a href='index.html' class="button logo"><span>krreame</span></a>
+
+  <a href="#" class="button ingresa"><span>ingresa</span></a>
 </nav>
 <div id="repeatableBG" style="height: 1153px; width: 1842px;"></div>
 <div class="center">
@@ -17,7 +23,7 @@
 		</div>
 		<div class="subPage">
 			<div id="ii_betterWorld" class="pageContent">
-				<img src="/static/images/darien.jpg" alt="" style="max-width:100%;max-height:100%;">
+				<img src="images/darien.jpg" alt="" style="max-width:100%;max-height:100%;">
 				<div class="iiModule moduleLight module16">
 					<div class="moduleIntro clearfix">
 						<div class="modColA">
@@ -60,4 +66,10 @@
 	</div>
 </div>
 
-{% endblock %}
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="js/flat-ui-pro.js"></script>
+    <script type="text/javascript" src="js/jquery.masonry.min.js"></script>
+    <script type="text/javascript" src="js/modernizr.custom.js""></script>
+    <script type="text/javascript" src="js/krreame.js"></script>
+	</body>
+</html>

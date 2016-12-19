@@ -1,46 +1,26 @@
-{% extends 'base.html' %}
-{% load staticfiles %}
-{% block content %}
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <title>krreame</title>
+      <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+      <link href="css/krreame.css" rel="stylesheet">
+      <link href="css/bootstrap.css" rel="stylesheet">
+      <link href="css/flat-ui-pro.css" rel="stylesheet">
+  </head>
+  <body>
 
 <div class="site-wrapper bg" style="background-color: #36465D">
-  <header class="main-header" style="background-image: url(static/images/123.jpg)">
+  <header class="main-header" style="background-image: url(images/123.jpg)">
   <nav class="main-nav overlay2">
-  <a href='/' class="button logo"><span>krreame</span></a>
-  {% if user and not user.is_anonymous %}
-  <a href="{% url 'user-logout' %}?next={{ request.path }}" class="button ingresa"><span>desconectar</span></a>
-  {% else %}
-  <a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}" class="button ingresa"><span>ingresa</span></a>
-  {% endif %}
+  <a href='index.html' class="button logo"><span>krreame</span></a>
+
+  <a href="#" class="button ingresa"><span>ingresa</span></a>
   </nav>
   <h4 class="subheader">Convierte decisiones en triunfos para tu equipo</h4>
-  <!--<div class="signup-center">
-    <div class="signup-form">
-      <form name="signup" method="post" id="signup">
-      {% csrf_token %}
-      <div class=" floating-label-form-group2 row_email">
-        <label for"signup_email">Correo electronico</label> 
-        <input id="signup_email" type="email" placeholder="Correo electronico"></input>
-      </div>
-      <div class=" floating-label-form-group2 form_row_password">
-        <label for="signup_password">Contraseña</label>
-        <input id="signup_password" type="password" placeholder="Contraseña"></input>
-      </div>
-      <div class=" floating-label-form-group2 form_row_username">
-        <label for="signup_username">Nombre de usuario</label>
-        <input id="signup_username" type="text" placeholder="Nombre de usuario"></input>
-      </div>
-    </div>
-      <button type="submit" id="signup_forms_submit" class="chrome big signup_forms_submit touchy blue">
-        <span class="signup_account_btn">Registrate</span>
-      </button>
-  </div>-->
   <footer class="main-footer">
     <div class="menu"><span>
-    {% if user and not user.is_anonymous %}
-    Bienvenido, {{user.get_full_name}} :)
-    {% else %}
     Bienvenido, invocador :)
-    {% endif %}
     </div></a>
   </footer>
   </header>
@@ -58,16 +38,16 @@
               <span>COMENTARIOS</span>
               <span class="conditions">Usa una cuenta de facebook para añadir un comentario. Al usar este servicio de comentarios estas de acuerdo a los terminos y condiciones de su servicio.</span>
               <div id="container">
-              <div class="fb-comments" id='1'><fb:comments href="http://gonzasestopal.com/article/1" data-width="550" data-numposts="5"> </fb:comments></div>
-              <div class="fb-comments" id='2'><fb:comments data-href="http://www.gonzasestopal.com/article/2" data-width="550" data-numposts="5"> </fb:comments></div>
-              <div class="fb-comments" id='3'><fb:comments href="http://ec2-52-33-6-138.us-west-2/article/3" data-width="550" data-numposts="5"> </fb:comments></div>
-              <div class="fb-comments" id='4'><fb:comments href="http://127.0.0.1:8000/article/4" data-width="550" data-numposts="5"> </fb:comments></div>
-              <div class="fb-comments" id='5'><fb:comments href="http://127.0.0.1:8000/article/5" data-width="550" data-numposts="5"> </fb:comments></div>
-              <div class="fb-comments" id='6'><fb:comments href="http://127.0.0.1:8000/article/6" data-width="550" data-numposts="5"> </fb:comments></div>
-              <div class="fb-comments" id='7'><fb:comments href="http://127.0.0.1:8000/article/7" data-width="550" data-numposts="5"> </fb:comments></div>
-              <div class="fb-comments" id='8'><fb:comments href="http://127.0.0.1:8000/article/8" data-width="550" data-numposts="5"> </fb:comments></div>
-              <div class="fb-comments" id='9'><fb:comments href="http://127.0.0.1:8000/article/9" data-width="550" data-numposts="5"> </fb:comments></div>
-              <div class="fb-comments" id='10'><fb:comments href="http://127.0.0.1:8000/article/10" data-width="550" data-numposts="5"></fb:comments></div>
+              <div class="fb-comments" id='1'><fb:comments href="#" data-width="550" data-numposts="5"> </fb:comments></div>
+              <div class="fb-comments" id='2'><fb:comments href="#" data-width="550" data-numposts="5"> </fb:comments></div>
+              <div class="fb-comments" id='3'><fb:comments href="#" data-width="550" data-numposts="5"> </fb:comments></div>
+              <div class="fb-comments" id='4'><fb:comments href="# data-width="550" data-numposts="5"> </fb:comments></div>
+              <div class="fb-comments" id='5'><fb:comments href="#" data-width="550" data-numposts="5"> </fb:comments></div>
+              <div class="fb-comments" id='6'><fb:comments href="#" data-width="550" data-numposts="5"> </fb:comments></div>
+              <div class="fb-comments" id='7'><fb:comments href="#" data-width="550" data-numposts="5"> </fb:comments></div>
+              <div class="fb-comments" id='8'><fb:comments href="# data-width="550" data-numposts="5"> </fb:comments></div>
+              <div class="fb-comments" id='9'><fb:comments href="#" data-width="550" data-numposts="5"> </fb:comments></div>
+              <div class="fb-comments" id='10'><fb:comments href="#" data-width="550" data-numposts="5"></fb:comments></div>
               </div>
             </div>
             <div class="modal-footer">
@@ -101,7 +81,7 @@
     <div class="item">
       <p><strong>Ansiedad de elo</strong></p>
       <a href="#" target="_blank">
-      <img src="static/images/challenger.jpg" alt="" />
+      <img src="images/challenger.jpg" alt="" />
       </a>
       <div class="post-description">
         <p>A muchos nos pasa, queremos llegar a ese rank para obtener ese marco que tanto queremos pero...</p>
@@ -115,11 +95,6 @@
           <span id='1a' onclick="ShowModal('Ansiedad de elo','1')"><strong>Leer comentarios</strong></span>
         </div>
         <div class="post-controls">
-        <fb:like
-  data-share="true"
-  data-width="450"
-  data-show-faces="true">
-</fb:like>
          <span class="glyphicon glyphicon-heart"></span>
         </div>
       </div>
@@ -127,8 +102,8 @@
     
     <div class="item">
       <p><strong>Actitudes y comportamientos</strong></p>
-      <a href="article" target="_blank">
-      <img src="static/images/darien.jpg" alt="" />
+      <a href="article.html" target="_blank">
+      <img src="images/darien.jpg" alt="" />
       </a>
       <div class="post-description">
         <p>La mejor manera de crear un ambiente favorable en la seleccion de campeones es...</p>
@@ -150,7 +125,7 @@
     <div class="item">
       <p><strong>Carreando desde el carril superior</strong></p>
       <a href="#" target="_blank">
-      <img src="static/images/riven.jpg" alt="" />
+      <img src="images/riven.jpg" alt="" />
       </a>
       <div class="post-description">
         <p>Las ventajas de escoger un campeon de daño como riven permite a los jugadores a hacer jugadas...</p>
@@ -195,7 +170,7 @@
     <div class="item">
       <p><strong>Suporteando tu equipo a la victoria!</strong></p>
       <a href="#" target="_blank">
-      <img src="static/images/ilao.jpg" alt="" />
+      <img src="images/ilao.jpg" alt="" />
       </a>
       <div class="post-description">
         <p>Lo sabemos, suportear no es facil, y menos cuando te encuentras con un equipo que no apoya tus decisiones...</p>
@@ -218,7 +193,7 @@
     <div class="item">
       <p><strong>El rework de poppy!</strong></p>
       <a href="http://las.leagueoflegends.com/es/champion-update/poppy-guardiana-del-martillo" target="_blank">
-      <img src="static/images/poppy.jpg" alt="" />
+      <img src="images/poppy.jpg" alt="" />
       </a>
       <div class="post-description">
         <p>Les traemos un video que resume los nuevos cambios y por supuesto, las ventajas para subir de elo...</p>
@@ -242,7 +217,7 @@
     <div class="item">
       <p><strong>Cuando dar o no dar el blue</strong></p>
       <a href="#" target="_blank">
-      <img src="static/images/blue.jpg" alt="" />
+      <img src="images/blue.jpg" alt="" />
       </a>
       <div class="post-description">
         <p>Uno de los buffos mas disputados del juego, puede crear diferencias entre el mid y el jungla..</p>
@@ -265,7 +240,7 @@
     <div class="item">
       <p><strong>Destrozando diamond con kindred ...</strong></p>
       <a href="https://www.youtube.com/watch?v=SqIlH0cr9pw" target="_blank">
-      <img src="static/images/kindred.jpg" alt="" />
+      <img src="images/kindred.jpg" alt="" />
       </a>
       <div class="post-description">
         <p>Replay de un jugador diamante 5 donde obtiene el control del juego despues de obtener un doble kill en top, prediciendo ..</p>
@@ -288,7 +263,7 @@
     <div class="item">
       <p><strong>Juega mas y habla menos</strong></p>
       <a href="#" target="_blank">
-      <img src="static/images/about2.jpg" alt="" />
+      <img src="images/about2.jpg" alt="" />
       </a>
       <div class="post-description">
         <p>Lo digo siempre, esa es la diferencia entre un jugador de lol nuevo y veterano...</p>
@@ -310,8 +285,8 @@
 
     <div class="item">
       <p><strong>Conocenos y envianos...!</strong></p>
-      <a href="colabora" target="_blank">
-      <img src="static/images/contact2.jpg" alt="" />
+      <a href="colabora.html" target="_blank">
+      <img src="images/contact2.jpg" alt="" />
       </a>
       <div class="post-description">
         <p>Nos encantaria escuchar tus historias y experiencias, envianos tus datos!</p>
@@ -336,4 +311,10 @@
 
 </div>
 
-{% endblock %}
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="js/flat-ui-pro.js"></script>
+    <script type="text/javascript" src="js/jquery.masonry.min.js"></script>
+    <script type="text/javascript" src="js/modernizr.custom.js""></script>
+    <script type="text/javascript" src="js/krreame.js"></script>
+  </body>
+</html>
